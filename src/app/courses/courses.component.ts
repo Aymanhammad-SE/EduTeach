@@ -1,0 +1,36 @@
+import { Component, OnInit } from '@angular/core';
+import {  Router } from '@angular/router';
+
+@Component({
+  selector: 'app-courses',
+  templateUrl: './courses.component.html',
+  styleUrls: ['./courses.component.css']
+})
+export class CoursesComponent implements OnInit {
+
+  constructor(private router:Router) { }
+
+  ngOnInit(): void {
+  }
+
+  courses: any[] = [
+    {
+      title: "Angular",
+      subtitle: "Front-End",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Angular_full_color_logo.svg/1200px-Angular_full_color_logo.svg.png"
+    },
+    {
+      title: "API",
+      subtitle: "Back-End",
+      image: "data:image/png;base64,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"
+    },
+    {
+      title: "Oracle",
+      subtitle: "DataBase",
+      image: "https://www.malwarebytes.com/blog/images/uploads/2022/04/oracle-logo.png"
+    }
+  ]
+  showProfile() {
+    this.router.navigate(['profile']);
+  }
+}
